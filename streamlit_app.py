@@ -12,4 +12,5 @@ with st.sidebar:
     yearsWithCurrentManager = st.number_input ("No. Years With Current Manager",0,20,1,1)
     Age = st.number_input ("Age",18,60,20,1)
     jobSatisfaction = st.selectbox("Job Satisfaction",("Very Satisfied","Satisfied","Disatisfied","Very Disatisfied"))
-    st.expander("Additional Fields")
+    with st.expander("Additional Fields"):
+        st.write("test")
