@@ -7,7 +7,7 @@ import pickle as pkl
 st.write("Hellow worlds")
 with st.sidebar:
     monthlyIncome = st.number_input ("Monthly Income ($)",0,500000,1000,1)
-    maritalStatus = st.selectbox("Marital Status",("Single","Married"))
+    maritalStatus = st.selectbox("Marital Status",("Single","Married","Divorced"))
     environmentSatisfaction = st.selectbox("Environment Satisfaction",("Very Satisfied","Satisfied","Disatisfied","Very Disatisfied"))
     yearsAtCompnay = st.number_input ("No. Years At Company",0,50,5,1)
     yearsWithCurrentManager = st.number_input ("No. Years With Current Manager",0,yearsAtCompnay,2,1)
