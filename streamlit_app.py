@@ -75,10 +75,11 @@ if submit_button:
     st.write(len(df.columns.tolist()))
     df.replace({False: 0, True: 1}, inplace=True)
     st.write(df)
+    df2 = pd.read_csv('data.csv')
     model_rf = pd.read_pickle("random-forest-attrition.pkl")
     st.write(model_rf)
     try:
-        turnover_prediction = model_rf.predict_proba(df)
+        turnover_prediction = model_rf.predict_proba(df2)
     except ValueError as e :
         st.write(e)
   
