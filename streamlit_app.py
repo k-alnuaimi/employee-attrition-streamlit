@@ -1,8 +1,6 @@
-import altair as alt
 import pandas as pd
 import streamlit as st
-import pickle as pkl
-import sklearn 
+
 
 
 with st.form(key='my_form'):
@@ -75,7 +73,7 @@ if submit_button:
     df = pd.DataFrame(data,index=[0])
     df.replace({False: 0, True: 1}, inplace=True)
     st.write(df)
-    model_rf = pkl.load(open("random-forest-attrition.pkl", "rb"))
+    model_rf = pd.read_pickle("random-forest-attrition.pkl")
     turnover_prediction = model_rf.predict_proba(df)
     turnover_prediction
 
