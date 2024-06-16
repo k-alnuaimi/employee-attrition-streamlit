@@ -74,11 +74,7 @@ if submit_button:
     df = pd.DataFrame(data,index=[0])
     st.write(len(df.columns.tolist()))
     df.replace({False: 0, True: 1}, inplace=True)
-    df2 = pd.read_csv('data.csv')
-    st.write(df)
-    st.write(df2[:1])
     model_rf = pd.read_pickle("random-forest-attrition.pkl")
-    st.write(model_rf)
     turnover_prediction = model_rf.predict_proba(df)
     st.write(turnover_prediction)
   
