@@ -36,7 +36,7 @@ with st.form(key='my_form'):
             overTime =st.selectbox("OverTime",("Yes","No"))
             performanceRating = st.slider("Performance Rating",1,5,1,3)
 if submit_button:
-    data = {'BusinessTravel_Travel_Frequently' : businessTravel == "Travel Frequently", 
+    data = {'Age' : Age,'BusinessTravel_Travel_Frequently' : businessTravel == "Travel Frequently", 
             'BusinessTravel_Travel_Rarely':  businessTravel == "Travel Rarely",
        'Department_Research & Development': department == "R&D",
          'Department_Sales': department == "Sales",
@@ -52,7 +52,6 @@ if submit_button:
        'MaritalStatus_Married' : maritalStatus == "Married",
          'MaritalStatus_Single': maritalStatus == "Single",
            'OverTime_Yes': overTime=="Yes",
-             'Age' : Age,
         'DistanceFromHome' : round(distanceFromeHome * 0.6),
           'Education' : education,
             'EnvironmentSatisfaction' : satisfactionOptions.index(environmentSatisfaction)+1,
