@@ -72,7 +72,7 @@ if submit_button:
        'YearsInCurrentRole' : yearsInCurrentRole,
          'YearsSinceLastPromotion' : yearsSinceLastPromotion,
        'YearsWithCurrManager' : yearsWithCurrentManager}
-    df = pd.DataFrame(data)
+    df = pd.DataFrame(data,index=[0])
     df.replace({False: 0, True: 1}, inplace=True)
     st.write(df)
     model_rf = pkl.load(open("random-forest-attrition.pkl", "rb"))
