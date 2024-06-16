@@ -72,6 +72,7 @@ if submit_button:
          'YearsSinceLastPromotion' : yearsSinceLastPromotion,
        'YearsWithCurrManager' : yearsWithCurrentManager}
     df = pd.DataFrame(data,index=[0])
+    st.write(len(df.columns.tolist()))
     df.replace({False: 0, True: 1}, inplace=True)
     st.write(df)
     model_rf = pd.read_pickle("random-forest-attrition.pkl")
