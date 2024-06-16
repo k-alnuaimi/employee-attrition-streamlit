@@ -72,9 +72,9 @@ if submit_button:
        'YearsInCurrentRole' : yearsInCurrentRole,
          'YearsSinceLastPromotion' : yearsSinceLastPromotion,
        'YearsWithCurrManager' : yearsWithCurrentManager}
-    data = data * 1
-    st.write(data)
     df = pd.DataFrame(data)
+    df.replace({False: 0, True: 1}, inplace=True)
+    st.write(df)
     model_rf = pkl.load(open("random-forest-attrition.pkl", "rb"))
     turnover_prediction = model_rf.predict_proba(df)
     turnover_prediction
