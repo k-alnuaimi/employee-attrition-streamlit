@@ -79,7 +79,7 @@ if submit_button:
     st.write(df2[:1])
     model_rf = pd.read_pickle("random-forest-attrition.pkl")
     st.write(model_rf)
-    turnover_prediction = model_rf.predict_proba(df2)
+    turnover_prediction = model_rf.predict_proba(df)
     st.write(turnover_prediction)
   
 
