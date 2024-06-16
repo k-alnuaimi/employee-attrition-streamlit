@@ -9,11 +9,12 @@ with st.form(key='my_form'):
     with st.sidebar:
         monthlyIncome = st.number_input ("Monthly Income ($)",0,500000,1000,1)
         maritalStatus = st.selectbox("Marital Status",("Single","Married","Divorced"))
-        environmentSatisfaction = st.selectbox("Environment Satisfaction",("Very Satisfied","Satisfied","Disatisfied","Very Disatisfied"))
+        satisfactionOptions = ["Very Disatisfied","Disatisfied","Satisfied","Very Satisfied"]
+        environmentSatisfaction = st.selectbox("Environment Satisfaction",satisfactionOptions)
         yearsAtCompnay = st.number_input ("No. Years At Company",0,50,5,1)
         yearsWithCurrentManager = st.number_input ("No. Years With Current Manager",0,yearsAtCompnay,2,1)
         Age = st.number_input ("Age",18,60,20,1)
-        jobSatisfaction = st.selectbox("Job Satisfaction",("Very Satisfied","Satisfied","Disatisfied","Very Disatisfied"))
+        jobSatisfaction = st.selectbox("Job Satisfaction",satisfactionOptions)
         submit_button = st.form_submit_button("Submit")
         with st.expander("Additional Fields"):
             #don't forget to convert to miles ( multiply by 0.6 )
@@ -36,4 +37,43 @@ with st.form(key='my_form'):
             overTime =st.selectbox("OverTime",("Yes","No"))
             performanceRating = st.slider("Performance Rating",1,5,1,3)
 if submit_button:
-    st.write("Hellow worlds")
+    data = {'BusinessTravel_Travel_Frequently' : businessTravel == "Travel Frequently", 
+            'BusinessTravel_Travel_Rarely':  businessTravel == "Travel Rarely",
+       'Department_Research & Development': department == "R&D",
+         'Department_Sales': department == "Sales",
+           'Gender_Male' : gender == "Male",
+       'JobRole_Human Resources' : jobRole == "HR",
+         'JobRole_Laboratory Technician' : jobRole == "LAB TECHNICIAN",
+       'JobRole_Manager' : jobRole == "MANAGER",
+         'JobRole_Manufacturing Director' : jobRole == "MANAGING DIRECTOR",
+       'JobRole_Research Director' : jobRole == "REASEARCH DIRECTOR",
+         'JobRole_Research Scientist' : jobRole == "RESEARCH SCIENTIST",
+       'JobRole_Sales Executive' : jobRole == "SALES EXECUTIEVE",
+         'JobRole_Sales Representative' : jobRole == "SALES REPRESENTATIVE",
+       'MaritalStatus_Married' : maritalStatus == "Married",
+         'MaritalStatus_Single': maritalStatus == "Single",
+           'OverTime_Yes': overTime=="Yes",
+             'Age' : Age,
+        'DistanceFromHome' : round(distanceFromeHome * 0.6),
+          'Education' : education,
+            'EnvironmentSatisfaction' : satisfactionOptions.index(environmentSatisfaction)+1,
+       'JobInvolvement' : jobInvolvement,
+         'JobLevel' : jobLevel,
+           'JobSatisfaction': satisfactionOptions.index(jobSatisfaction)+1 ,
+             'MonthlyIncome' : monthlyIncome,
+       'NumCompaniesWorked' : numCompaniesWorked,
+         'PercentSalaryHike' : percentSalaryHike,
+           'PerformanceRating' : performanceRating,
+       'RelationshipSatisfaction' : relationShipSatisfaction,
+         'TotalWorkingYears' : totalWorkingYears,
+       'TrainingTimesLastYear' : trainingTimesLastYear,
+         'WorkLifeBalance' : workLifeBalance,
+           'YearsAtCompany' : yearsAtCompnay,
+       'YearsInCurrentRole' : yearsInCurrentRole,
+         'YearsSinceLastPromotion' : yearsSinceLastPromotion,
+       'YearsWithCurrManager' : yearsWithCurrentManager}
+    df = pd.DataFrame(data)
+    model_rf = pkl.load(open("random-forest-attrition.pkl", "rb"))
+    turnover_prediction = model_rf.predict_proba(df)
+    turnover_prediction
+
