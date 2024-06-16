@@ -76,6 +76,7 @@ if submit_button:
     df.replace({False: 0, True: 1}, inplace=True)
     model_rf = pd.read_pickle("random-forest-attrition.pkl")
     turnover_prediction = model_rf.predict_proba(df)
+    st.write(turnover_prediction)
     st.write('There is a ', turnover_prediction[1] * 100 ,'%')
   
 
