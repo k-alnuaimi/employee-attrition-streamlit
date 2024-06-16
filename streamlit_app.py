@@ -5,8 +5,8 @@ import streamlit as st
 import pickle as pkl
 
 st.write("Hellow worlds")
-with st.sidebar:
-    with st.form(key='my_form'):
+with st.form(key='my_form'):
+    with st.sidebar:
         monthlyIncome = st.number_input ("Monthly Income ($)",0,500000,1000,1)
         maritalStatus = st.selectbox("Marital Status",("Single","Married","Divorced"))
         environmentSatisfaction = st.selectbox("Environment Satisfaction",("Very Satisfied","Satisfied","Disatisfied","Very Disatisfied"))
