@@ -6,13 +6,14 @@ import pickle as pkl
 
 st.write("Hellow worlds")
 with st.sidebar:
-    monthlyIncome = st.number_input ("Monthly Income ($)",0,500000,1000,1)
-    maritalStatus = st.selectbox("Marital Status",("Single","Married","Divorced"))
-    environmentSatisfaction = st.selectbox("Environment Satisfaction",("Very Satisfied","Satisfied","Disatisfied","Very Disatisfied"))
-    yearsAtCompnay = st.number_input ("No. Years At Company",0,50,5,1)
-    yearsWithCurrentManager = st.number_input ("No. Years With Current Manager",0,yearsAtCompnay,2,1)
-    Age = st.number_input ("Age",18,60,20,1)
-    jobSatisfaction = st.selectbox("Job Satisfaction",("Very Satisfied","Satisfied","Disatisfied","Very Disatisfied"))
+    with st.form(key='my_form'):
+        monthlyIncome = st.number_input ("Monthly Income ($)",0,500000,1000,1)
+        maritalStatus = st.selectbox("Marital Status",("Single","Married","Divorced"))
+        environmentSatisfaction = st.selectbox("Environment Satisfaction",("Very Satisfied","Satisfied","Disatisfied","Very Disatisfied"))
+        yearsAtCompnay = st.number_input ("No. Years At Company",0,50,5,1)
+        yearsWithCurrentManager = st.number_input ("No. Years With Current Manager",0,yearsAtCompnay,2,1)
+        Age = st.number_input ("Age",18,60,20,1)
+        jobSatisfaction = st.selectbox("Job Satisfaction",("Very Satisfied","Satisfied","Disatisfied","Very Disatisfied"))
     with st.expander("Additional Fields"):
         #don't forget to convert to miles ( multiply by 0.6 )
         distanceFromeHome = st.slider("Distance From Home (KM)",1,200,2,1)
@@ -33,4 +34,3 @@ with st.sidebar:
         gender = st.selectbox("Gender",("Male","Female"))
         overTime =st.selectbox("OverTime",("Yes","No"))
         performanceRating = st.slider("Performance Rating",1,5,1,3)
-        
