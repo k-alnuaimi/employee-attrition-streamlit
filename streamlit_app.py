@@ -76,6 +76,6 @@ if submit_button:
     st.write(df)
     model_rf = pkl.load(open("random-forest-attrition.pkl", "rb"))
     st.write(model_rf)
-    turnover_prediction = model_rf.predict_proba(df)
+    turnover_prediction = model_rf.predict(df)
     st.write(turnover_prediction)
 
