@@ -76,7 +76,10 @@ if submit_button:
     st.write(df)
     model_rf = pd.read_pickle("random-forest-attrition.pkl")
     st.write(model_rf)
-    turnover_prediction = model_rf.predict_proba(df)
+    try:
+        turnover_prediction = model_rf.predict_proba(df)
+    except ValueError :
+        st.write(ValueError)
     st.write(turnover_prediction)
     pd.pic
 
