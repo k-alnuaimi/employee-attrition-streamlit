@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 import pickle as pkl
 
-st.write("Hellow worlds")
+
 with st.form(key='my_form'):
     with st.sidebar:
         monthlyIncome = st.number_input ("Monthly Income ($)",0,500000,1000,1)
@@ -35,3 +35,5 @@ with st.form(key='my_form'):
             gender = st.selectbox("Gender",("Male","Female"))
             overTime =st.selectbox("OverTime",("Yes","No"))
             performanceRating = st.slider("Performance Rating",1,5,1,3)
+if submit_button:
+    st.write("Hellow worlds")
