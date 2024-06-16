@@ -78,8 +78,7 @@ if submit_button:
     st.write(model_rf)
     try:
         turnover_prediction = model_rf.predict_proba(df)
-    except ValueError :
-        st.write(ValueError)
-    st.write(turnover_prediction)
-    pd.pic
+    except ValueError as e :
+        st.write(e)
+  
 
