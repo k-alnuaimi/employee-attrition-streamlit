@@ -77,6 +77,6 @@ if submit_button:
     model_rf = pd.read_pickle("random-forest-attrition.pkl")
     turnover_prediction = model_rf.predict_proba(df)
     st.write(turnover_prediction)
-    st.write('There is a'+ turnover_prediction[0][1] * 100 +'% chance of the employee leaving')
+    st.write('There is a', turnover_prediction[0][1] * 100 ,'% chance of the employee leaving')
   
 
