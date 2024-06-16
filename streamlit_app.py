@@ -2,6 +2,7 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 import pickle as pkl
+import sklearn 
 
 
 with st.form(key='my_form'):
