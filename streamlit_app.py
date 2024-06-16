@@ -14,6 +14,7 @@ with st.sidebar:
         yearsWithCurrentManager = st.number_input ("No. Years With Current Manager",0,yearsAtCompnay,2,1)
         Age = st.number_input ("Age",18,60,20,1)
         jobSatisfaction = st.selectbox("Job Satisfaction",("Very Satisfied","Satisfied","Disatisfied","Very Disatisfied"))
+        submit_button = st.form_submit_button("Submit")
     with st.expander("Additional Fields"):
         #don't forget to convert to miles ( multiply by 0.6 )
         distanceFromeHome = st.slider("Distance From Home (KM)",1,200,2,1)
