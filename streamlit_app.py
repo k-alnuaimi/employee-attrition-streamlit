@@ -65,8 +65,6 @@ with st.form(key='my_form'):
         jobSatisfaction = st.selectbox("Job Satisfaction",satisfactionOptions,2)
         distanceFromeHome = st.slider("Distance From Home (KM)",1,200,4,1)
     submit_button = st.form_submit_button("Submit")
-    if submit_button:
-        show_turnover_rate()
     with st.sidebar:
         
         #don't forget to convert to miles ( multiply by 0.6 )
@@ -88,6 +86,7 @@ with st.form(key='my_form'):
         overTime =st.selectbox("OverTime",("Yes","No"))
         performanceRating = st.slider("Performance Rating",1,5,3,1)
 
-
+    if submit_button:
+        show_turnover_rate()
   
 
