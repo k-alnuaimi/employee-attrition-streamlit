@@ -15,7 +15,7 @@ with col1:
 with col2:
     environmentSatisfaction = st.selectbox("Environment Satisfaction",satisfactionOptions,2)
     yearsAtCompnay = st.number_input ("No. Years At Company",0,50,5,1)
-    yearsWithCurrentManager = st.number_input ("No. Years With Current Manager",0,40,3,1)
+    yearsWithCurrentManager = st.number_input ("No. Years With Current Manager",0,50,3,1)
 with col3:
     Age = st.number_input ("Age",18,60,35,1)
     jobSatisfaction = st.selectbox("Job Satisfaction",satisfactionOptions,2)
