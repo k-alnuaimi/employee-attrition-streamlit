@@ -54,7 +54,7 @@ def show_turnover_rate():
 col1, col2, col3 = st.columns(3)
 with st.form(key='my_form'):
     with col1:
-        monthlyIncome = st.slider("Monthly Income ($)",0,300000,6500,500)
+        monthlyIncome = st.slider("Monthly Income ($)",0,100000,6500,500)
         maritalStatus = st.selectbox("Marital Status",("Single","Married","Divorced"))
         satisfactionOptions = ["Very Disatisfied","Disatisfied","Satisfied","Very Satisfied"]
     with col2:
