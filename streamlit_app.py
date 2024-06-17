@@ -45,6 +45,7 @@ def show_turnover_rate():
     df = pd.DataFrame(data,index=[0])
     df.replace({False: 0, True: 1}, inplace=True)
     turnover_prediction = model_rf.predict_proba(df)
+    st.write(df)
     st.write(turnover_prediction)
     st.write('There is a', turnover_prediction[0][1] * 100 ,'% chance of the employee leaving')
 
