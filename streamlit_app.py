@@ -9,7 +9,7 @@ model_rf = init_model()
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    monthlyIncome = st.slider("Monthly Income ($)",0,500000,6500,500)
+    monthlyIncome = st.slider("Monthly Income ($)",0,300000,6500,500)
     maritalStatus = st.selectbox("Marital Status",("Single","Married","Divorced"))
     satisfactionOptions = ["Very Disatisfied","Disatisfied","Satisfied","Very Satisfied"]
 with col2:
@@ -19,11 +19,11 @@ with col2:
 with col3:
     Age = st.number_input ("Age",18,60,35,1)
     jobSatisfaction = st.selectbox("Job Satisfaction",satisfactionOptions,2)
+    distanceFromeHome = st.slider("Distance From Home (KM)",1,200,4,1)
 with st.form(key='my_form'):
     with st.sidebar:
         submit_button = st.form_submit_button("Submit")
         #don't forget to convert to miles ( multiply by 0.6 )
-        distanceFromeHome = st.slider("Distance From Home (KM)",1,200,4,1)
         totalWorkingYears = st.slider("Total Working Years",0,60,5,1)
         yearsInCurrentRole = st.slider("Years In Current Role",0,60,3,1)
         workLifeBalance = st.slider("Work Life Balance",1,4,2,1)
