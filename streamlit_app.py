@@ -53,7 +53,7 @@ def show_turnover_rate():
 col1, col2, col3 = st.columns(3)
 with st.form(key='my_form'):
     with col1:
-        monthlyIncome = st.slider("Monthly Income ($)",0,300000,6500,500,on_change=show_turnover_rate)
+        monthlyIncome = st.slider("Monthly Income ($)",0,300000,6500,500)
         maritalStatus = st.selectbox("Marital Status",("Single","Married","Divorced"))
         satisfactionOptions = ["Very Disatisfied","Disatisfied","Satisfied","Very Satisfied"]
     with col2:
@@ -65,6 +65,8 @@ with st.form(key='my_form'):
         jobSatisfaction = st.selectbox("Job Satisfaction",satisfactionOptions,2)
         distanceFromeHome = st.slider("Distance From Home (KM)",1,200,4,1)
     submit_button = st.form_submit_button("Submit")
+    if submit_button:
+        show_turnover_rate()
     with st.sidebar:
         
         #don't forget to convert to miles ( multiply by 0.6 )
