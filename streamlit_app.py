@@ -6,14 +6,19 @@ def init_model():
     return pd.read_pickle("random-forest-attrition.pkl")
 model_rf = init_model()
 
-monthlyIncome = st.number_input ("Monthly Income ($)",0,500000,1000,1)
-maritalStatus = st.selectbox("Marital Status",("Single","Married","Divorced"))
-satisfactionOptions = ["Very Disatisfied","Disatisfied","Satisfied","Very Satisfied"]
-environmentSatisfaction = st.selectbox("Environment Satisfaction",satisfactionOptions)
-yearsAtCompnay = st.number_input ("No. Years At Company",0,50,5,1)
-yearsWithCurrentManager = st.number_input ("No. Years With Current Manager",0,yearsAtCompnay,2,1)
-Age = st.number_input ("Age",18,60,20,1)
-jobSatisfaction = st.selectbox("Job Satisfaction",satisfactionOptions)
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    monthlyIncome = st.number_input ("Monthly Income ($)",0,500000,1000,1)
+    maritalStatus = st.selectbox("Marital Status",("Single","Married","Divorced"))
+    satisfactionOptions = ["Very Disatisfied","Disatisfied","Satisfied","Very Satisfied"]
+with col2:
+    environmentSatisfaction = st.selectbox("Environment Satisfaction",satisfactionOptions)
+    yearsAtCompnay = st.number_input ("No. Years At Company",0,50,5,1)
+    yearsWithCurrentManager = st.number_input ("No. Years With Current Manager",0,yearsAtCompnay,2,1)
+with col3:
+    Age = st.number_input ("Age",18,60,20,1)
+    jobSatisfaction = st.selectbox("Job Satisfaction",satisfactionOptions)
 with st.form(key='my_form'):
     with st.sidebar:
         submit_button = st.form_submit_button("Submit")
