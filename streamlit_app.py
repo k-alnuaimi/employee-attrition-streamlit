@@ -64,8 +64,9 @@ with st.form(key='my_form'):
         Age = st.number_input ("Age",18,60,35,1)
         jobSatisfaction = st.selectbox("Job Satisfaction",satisfactionOptions,2)
         distanceFromeHome = st.slider("Distance From Home (KM)",1,200,4,1)
+    submit_button = st.form_submit_button("Submit")
     with st.sidebar:
-        submit_button = st.form_submit_button("Submit")
+        
         #don't forget to convert to miles ( multiply by 0.6 )
         totalWorkingYears = st.slider("Total Working Years",0,60,5,1)
         yearsInCurrentRole = st.slider("Years In Current Role",0,60,3,1)
