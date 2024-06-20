@@ -10,8 +10,6 @@ model_rf = init_model()
 
 
 def show_turnover_rate():
-    st.write("environment", satisfactionOptions.index(environmentSatisfaction)+1)
-    st.write("job",satisfactionOptions.index(jobSatisfaction)+1)
     data = {'Age' : Age,
             'BusinessTravel_Travel_Frequently' : businessTravel == "Travel Frequently", 
             'BusinessTravel_Travel_Rarely':  businessTravel == "Travel Rarely",
