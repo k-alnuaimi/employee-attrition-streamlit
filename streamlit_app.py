@@ -48,7 +48,7 @@ def show_turnover_rate():
     st.write(df)
     st.write(turnover_prediction)
     st.write('There is a', turnover_prediction[0][1] * 100 ,'% chance of the employee leaving')
-
+showrate = False
     
 
 col1, col2, col3 = st.columns(3)
@@ -63,7 +63,7 @@ with st.form(key='my_form'):
         yearsWithCurrentManager = st.number_input ("No. Years With Current Manager",0,50,3,1)
     with col3:
         Age = st.number_input ("Age",18,60,35,1)
-        jobSatisfaction = st.selectbox("Job Satisfaction",satisfactionOptions,2)
+        jobSatisfaction = st.selectbox("Job Satisfaction",satisfactionOptions,1)
         distanceFromeHome = st.slider("Distance From Home (KM)",1,200,4,1)
     submit_button = st.form_submit_button("Submit")
     with st.sidebar:
@@ -88,6 +88,10 @@ with st.form(key='my_form'):
         performanceRating = st.slider("Performance Rating",1,5,2,1)
 
     if submit_button:
-        show_turnover_rate()
+      showrate = True
+    else:
+        showrate = False
+if showrate:
+  show_turnover_rate()
   
 
