@@ -10,6 +10,7 @@ model_rf = init_model()
 
 
 def show_turnover_rate():
+    print(Age,monthlyIncome)
     data = {'Age' : Age,
             'BusinessTravel_Travel_Frequently' : businessTravel == "Travel Frequently", 
             'BusinessTravel_Travel_Rarely':  businessTravel == "Travel Rarely",
