@@ -6,6 +6,8 @@ def init_model():
     return pd.read_pickle("random-forest-attrition.pkl")
 model_rf = init_model()
 
+st.set_page_config(initial_sidebar_state='collapsed')
+
 def show_turnover_rate():
     data = {'Age' : Age,
             'BusinessTravel_Travel_Frequently' : businessTravel == "Travel Frequently", 
