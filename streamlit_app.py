@@ -90,7 +90,7 @@ with st.form(key='my_form'):
     if submit_button:
       showrate = True
     else:
-        showrate = False
+      showrate = False
 if showrate:
   show_turnover_rate()
   
