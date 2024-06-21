@@ -61,14 +61,14 @@ with col1:
     totalWorkingYears = st.slider("Total Working Years",0,30,6,1)
 with col2:
     environmentSatisfaction = st.selectbox("Environment Satisfaction",satisfactionOptions,2)
-    yearsAtCompnay = st.number_input ("No. Years At Company",0,30,5,1)
-    yearsWithCurrentManager = st.number_input ("No. Years With Current Manager",0,30,3,1)
+    yearsAtCompnay = st.number_input ("No. Years At Company",0,30,3,1)
+    yearsWithCurrentManager = st.number_input ("No. Years With Current Manager",0,30,1,1)
 with col3:
     Age = st.number_input ("Age",18,60,35,1)
     jobSatisfaction = st.selectbox("Job Satisfaction",satisfactionOptions,1)
     distanceFromeHome = st.slider("Distance From Home (KM)",1,200,4,1)
 with st.sidebar:
-    yearsInCurrentRole = st.slider("Years In Current Role",0,60,3,1)
+    yearsInCurrentRole = st.slider("Years In Current Role",0,60,1,1)
     performanceRating = st.slider("Performance Rating",1,5,2,1)
     workLifeBalance = st.slider("Work Life Balance",1,4,1,1)
     jobInvolvement = st.slider("Job Involvement",1,4,2,1)
@@ -79,7 +79,8 @@ with st.sidebar:
     trainingTimesLastYear = st.slider("Training Times Last year",1,10,2,1)
     percentSalaryHike = st.slider("Percentage Increase In Salary ",1,30,5,1)
     numCompaniesWorked = st.slider("Number of Compnaies Worked",1,10,2,1)
-    education = st.slider("Education",1,5,3,1)
+    #education = st.slider("Education",1,5,3,1)
+    education = 1
     yearsSinceLastPromotion = st.slider("Years Since Last Promotion",1,30,2,1)
     businessTravel = st.selectbox("Business Travel",("No Travel","Travel Frequently","Travel Rarely"))
     #jobRole = st.selectbox("Job Role",("HC REP","HR","LAB TECHNICIAN","MANAGER","MANAGING DIRECTOR","REASEARCH DIRECTOR","RESEARCH SCIENTIST","SALES EXECUTIEVE","SALES REPRESENTATIVE"))
