@@ -88,7 +88,7 @@ with st.sidebar:
     #education = st.slider("Education",1,5,3,1)
     education = 1
     #yearsSinceLastPromotion = st.slider("Years Since Last Promotion",1,30,2,1)
-    earsSinceLastPromotion = 1
+    yearsSinceLastPromotion = 1
     #jobRole = st.selectbox("Job Role",("HC REP","HR","LAB TECHNICIAN","MANAGER","MANAGING DIRECTOR","REASEARCH DIRECTOR","RESEARCH SCIENTIST","SALES EXECUTIEVE","SALES REPRESENTATIVE"))
     jobRole = "HR"
     yearsWithCurrentManager = 0
