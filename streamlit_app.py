@@ -7,6 +7,7 @@ def init_model():
     return pd.read_pickle("random-forest-attrition.pkl")
 model_rf = init_model()
 
+satisfactionOptions = ["Very Disatisfied","Disatisfied","Satisfied","Very Satisfied"]
 
 
 def show_turnover_rate():
@@ -55,9 +56,9 @@ showrate = False
 col1, col2, col3 = st.columns(3)
 #with st.form(key='my_form'):
 with col1:
-    monthlyIncome = st.slider("Monthly Income ($)",0,100000,6500,500)
+    monthlyIncome = st.slider("Monthly Income ($)",0,100000,20000,500)
     maritalStatus = st.selectbox("Marital Status",("Single","Married","Divorced"))
-    satisfactionOptions = ["Very Disatisfied","Disatisfied","Satisfied","Very Satisfied"]
+    totalWorkingYears = st.slider("Total Working Years",0,60,6,1)
 with col2:
     environmentSatisfaction = st.selectbox("Environment Satisfaction",satisfactionOptions,2)
     yearsAtCompnay = st.number_input ("No. Years At Company",0,50,5,1)
@@ -67,9 +68,6 @@ with col3:
     jobSatisfaction = st.selectbox("Job Satisfaction",satisfactionOptions,1)
     distanceFromeHome = st.slider("Distance From Home (KM)",1,200,4,1)
 with st.sidebar:
-    
-    #don't forget to convert to miles ( multiply by 0.6 )
-    totalWorkingYears = st.slider("Total Working Years",0,60,6,1)
     yearsInCurrentRole = st.slider("Years In Current Role",0,60,3,1)
     workLifeBalance = st.slider("Work Life Balance",1,4,1,1)
     jobInvolvement = st.slider("Job Involvement",1,4,2,1)
