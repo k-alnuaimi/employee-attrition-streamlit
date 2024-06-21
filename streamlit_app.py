@@ -58,7 +58,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     monthlyIncome = st.slider("Monthly Income ($)",0,100000,3000,500)
     maritalStatus = st.selectbox("Marital Status",("Single","Married","Divorced"))
-    totalWorkingYears = st.slider("Total Working Years",0,30,6,1)
+    #totalWorkingYears = st.slider("Total Working Years",0,30,6,1)
 with col2:
     environmentSatisfaction = st.selectbox("Environment Satisfaction",satisfactionOptions,2)
     #yearsAtCompnay = st.number_input ("No. Years At Company",0,30,3,1)
@@ -93,7 +93,7 @@ with st.sidebar:
     jobRole = "HR"
     yearsWithCurrentManager = 0
     yearsAtCompnay = 0
-
+    totalWorkingYears  = 2
    # if submit_button:
   #    showrate = True
   #  else:
