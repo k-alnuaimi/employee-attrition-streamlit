@@ -49,14 +49,14 @@ def show_turnover_rate():
     df = pd.DataFrame(data,index=[0])
     df.replace({False: 0, True: 1}, inplace=True)
     turnover_prediction = model_rf.predict_proba(df)
-    st.write('There is a', turnover_prediction[0][1] * 100 ,'% chance of the employee leaving')
+    st.write('There is a', round(turnover_prediction[0][1] * 100) ,'% chance of the employee leaving')
 showrate = False
     
 
 col1, col2, col3 = st.columns(3)
 #with st.form(key='my_form'):
 with col1:
-    monthlyIncome = st.slider("Monthly Income ($)",0,100000,20000,500)
+    monthlyIncome = st.slider("Monthly Income ($)",0,100000,3000,500)
     maritalStatus = st.selectbox("Marital Status",("Single","Married","Divorced"))
     totalWorkingYears = st.slider("Total Working Years",0,60,6,1)
 with col2:
