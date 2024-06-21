@@ -69,6 +69,7 @@ with col3:
     distanceFromeHome = st.slider("Distance From Home (KM)",1,200,4,1)
 with st.sidebar:
     yearsInCurrentRole = st.slider("Years In Current Role",0,60,3,1)
+    performanceRating = st.slider("Performance Rating",1,5,2,1)
     workLifeBalance = st.slider("Work Life Balance",1,4,1,1)
     jobInvolvement = st.slider("Job Involvement",1,4,2,1)
     relationShipSatisfaction = st.slider("Relationship Satisfaction",1,4,2,1)
@@ -85,7 +86,7 @@ with st.sidebar:
     jobRole = "HR"
     gender = st.selectbox("Gender",("Male","Female"))
     overTime =st.selectbox("OverTime",("Yes","No"))
-    performanceRating = st.slider("Performance Rating",1,5,2,1)
+    
 
    # if submit_button:
   #    showrate = True
