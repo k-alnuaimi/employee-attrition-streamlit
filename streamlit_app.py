@@ -75,7 +75,8 @@ with st.sidebar:
     relationShipSatisfaction = st.slider("Relationship Satisfaction",1,4,2,1)
     #department =st.selectbox("Department",("Sales","HR","R&D"))
     department = "HR"
-    jobLevel = st.slider("Job Level",1,5,2,1)
+    #jobLevel = st.slider("Job Level",1,5,2,1)
+    jobLevel = 1
     trainingTimesLastYear = st.slider("Training Times Last year",1,10,2,1)
     percentSalaryHike = st.slider("Percentage Increase In Salary ",1,30,5,1)
     numCompaniesWorked = st.slider("Number of Compnaies Worked",1,10,2,1)
