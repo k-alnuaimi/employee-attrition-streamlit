@@ -68,6 +68,9 @@ with col3:
     jobSatisfaction = st.selectbox("Job Satisfaction",satisfactionOptions,1)
     distanceFromeHome = st.slider("Distance From Home (KM)",1,200,4,1)
 with st.sidebar:
+    gender = st.selectbox("Gender",("Male","Female"))
+    overTime =st.selectbox("OverTime",("Yes","No"))
+    businessTravel = st.selectbox("Business Travel",("No Travel","Travel Frequently","Travel Rarely"))
     yearsInCurrentRole = st.slider("Years In Current Role",0,60,1,1)
     performanceRating = st.slider("Performance Rating",1,5,2,1)
     workLifeBalance = st.slider("Work Life Balance",1,4,1,1)
@@ -83,11 +86,10 @@ with st.sidebar:
     #education = st.slider("Education",1,5,3,1)
     education = 1
     yearsSinceLastPromotion = st.slider("Years Since Last Promotion",1,30,2,1)
-    businessTravel = st.selectbox("Business Travel",("No Travel","Travel Frequently","Travel Rarely"))
+    
     #jobRole = st.selectbox("Job Role",("HC REP","HR","LAB TECHNICIAN","MANAGER","MANAGING DIRECTOR","REASEARCH DIRECTOR","RESEARCH SCIENTIST","SALES EXECUTIEVE","SALES REPRESENTATIVE"))
     jobRole = "HR"
-    gender = st.selectbox("Gender",("Male","Female"))
-    overTime =st.selectbox("OverTime",("Yes","No"))
+    
     
 
    # if submit_button:
