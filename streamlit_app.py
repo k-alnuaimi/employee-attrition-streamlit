@@ -50,14 +50,15 @@ def show_turnover_rate():
     df.replace({False: 0, True: 1}, inplace=True)
     turnover_prediction = model_rf.predict_proba(df)
     probability = round(turnover_prediction[0][1] * 100)
+    
     if probability < 33:
         st.image('Happy Employee 1.jpeg')
     elif probability < 66:
         st.image('Normal Employee.jpeg')
     else:
+        st.write('Employee likely to leave')
         st.image('Sad Employee 1.jpeg')
-    st.write('There is a', probability ,'% chance of the employee leaving')
-showrate = False
+    
     
 
 col1, col2, col3 = st.columns(3)
@@ -70,6 +71,7 @@ with col2:
     environmentSatisfaction = st.selectbox("Environment Satisfaction",satisfactionOptions,2)
     #yearsAtCompnay = st.number_input ("No. Years At Company",0,30,3,1)
     #yearsWithCurrentManager = st.number_input ("No. Years With Current Manager",0,30,1,1)
+    submit_button = st.button("Submit",type="primary")
 with col3:
     Age = st.number_input ("Age",18,60,25,1)
     jobSatisfaction = st.selectbox("Job Satisfaction",satisfactionOptions,1)
@@ -105,7 +107,7 @@ with st.sidebar:
   #    showrate = True
   #  else:
   #    showrate = False
-submit_button = st.button("Submit",type="primary")
+
 if submit_button:
   show_turnover_rate()
   
