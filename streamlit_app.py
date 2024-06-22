@@ -56,7 +56,7 @@ showrate = False
 col1, col2, col3 = st.columns(3)
 #with st.form(key='my_form'):
 with col1:
-    monthlyIncome = st.slider("Monthly Income ($)",0,100000,3000,500)
+    monthlyIncome = st.slider("Monthly Income ($)",0,50000,3000,500)
     maritalStatus = st.selectbox("Marital Status",("Single","Married","Divorced"))
     #totalWorkingYears = st.slider("Total Working Years",0,30,6,1)
 with col2:
@@ -64,7 +64,7 @@ with col2:
     #yearsAtCompnay = st.number_input ("No. Years At Company",0,30,3,1)
     #yearsWithCurrentManager = st.number_input ("No. Years With Current Manager",0,30,1,1)
 with col3:
-    Age = st.number_input ("Age",18,60,35,1)
+    Age = st.number_input ("Age",18,60,25,1)
     jobSatisfaction = st.selectbox("Job Satisfaction",satisfactionOptions,1)
     distanceFromeHome = st.slider("Distance From Home (KM)",1,200,4,1)
 with st.sidebar:
