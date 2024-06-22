@@ -49,7 +49,14 @@ def show_turnover_rate():
     df = pd.DataFrame(data,index=[0])
     df.replace({False: 0, True: 1}, inplace=True)
     turnover_prediction = model_rf.predict_proba(df)
-    st.write('There is a', round(turnover_prediction[0][1] * 100) ,'% chance of the employee leaving')
+    probability = round(turnover_prediction[0][1] * 100)
+    if probability < 33:
+        st.image('Happy Employee 1.jpeg')
+    elif probability < 66:
+        st.image('Normal Employee.jpeg')
+    else:
+        st.image('Sad Employee 1.jpeg')
+    st.write('There is a', probability ,'% chance of the employee leaving')
 showrate = False
     
 
