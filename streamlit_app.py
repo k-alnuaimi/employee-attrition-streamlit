@@ -71,6 +71,8 @@ with col2:
     environmentSatisfaction = st.selectbox("Environment Satisfaction",satisfactionOptions,2)
     #yearsAtCompnay = st.number_input ("No. Years At Company",0,30,3,1)
     #yearsWithCurrentManager = st.number_input ("No. Years With Current Manager",0,30,1,1)
+    workLifeBalance = st.slider("Work Life Balance",1,4,1,1)
+    performanceRating = st.slider("Performance Rating",1,5,2,1)
     submit_button = st.button("Submit",type="primary")
 with col3:
     Age = st.number_input ("Age",18,60,25,1)
@@ -83,8 +85,8 @@ with st.sidebar:
     
     #yearsInCurrentRole = st.slider("Years In Current Role",0,60,1,1)
     yearsInCurrentRole = 0
-    performanceRating = st.slider("Performance Rating",1,5,2,1)
-    workLifeBalance = st.slider("Work Life Balance",1,4,1,1)
+    
+    
     jobInvolvement = st.slider("Job Involvement",1,4,2,1)
     relationShipSatisfaction = st.slider("Relationship Satisfaction",1,4,2,1)
     #department =st.selectbox("Department",("Sales","HR","R&D"))
