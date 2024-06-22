@@ -54,7 +54,7 @@ def show_turnover_rate():
     if probability < 33:
         st.image('Happy Employee 1.jpeg')
     elif probability < 66:
-        st.image('Normal Employee.jpeg')
+        st.image('Normal Employee.jpeg',width=200)
     else:
         st.write('Employee likely to leave')
         st.image('Sad Employee 1.jpeg')
