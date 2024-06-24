@@ -52,6 +52,7 @@ def show_turnover_rate():
     probability = round(turnover_prediction[0][1] * 100)
     text = ''
     img = ''
+    subtext = ''
     if probability < 33:
         img = 'Happy Employee 1.jpeg'
         text = 'Happy Employee'
@@ -60,10 +61,19 @@ def show_turnover_rate():
         text = 'Normal Employee'
     else:
         text = 'Likely to leave'
+        subtext = """
+                  Try modifying the following values to retain the employee:
+
+                  - Job Satisfaction
+                  - Environment Satisfaction
+                  - Monthly Income
+
+                  """
         img = 'Sad Employee 1.jpeg'
     col1, col2 = st.columns([0.3,0.7])
     with col1:
         st.subheader(text,divider='blue')
+        st.text(subtext)
     with col2:
         st.image(img)
     
