@@ -63,7 +63,7 @@ def show_turnover_rate():
         img = 'Sad Employee 1.jpeg'
     col1, col2 = st.columns([0.35,0.65])
     with col1:
-        st.header(text)
+        st.subheader(text)
     with col2:
         st.image(img)
     
