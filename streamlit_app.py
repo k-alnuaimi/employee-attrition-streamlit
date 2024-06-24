@@ -62,7 +62,8 @@ def show_turnover_rate():
     else:
         text = 'Likely to leave'
         subtext = """
-                  Try modifying the following values to retain the employee:
+                  Try modifying the following 
+                  values to retain the employee:
 
                   - Job Satisfaction
                   - Environment Satisfaction
