@@ -74,7 +74,7 @@ def show_turnover_rate():
     col1, col2 = st.columns([0.3,0.7])
     with col1:
         st.subheader(text,divider='blue')
-        st.text_area('test',subtext,disabled=True,label_visibility='hidden')
+        st.text(subtext)
     with col2:
         st.image(img)
     
