@@ -65,7 +65,7 @@ def show_turnover_rate():
     with col1:
         st.write(text)
     with col2:
-        st.image(img)
+        st.write('test')
     
     
 
