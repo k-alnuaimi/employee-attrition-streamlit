@@ -50,14 +50,22 @@ def show_turnover_rate():
     df.replace({False: 0, True: 1}, inplace=True)
     turnover_prediction = model_rf.predict_proba(df)
     probability = round(turnover_prediction[0][1] * 100)
-    
+    text = ''
+    img = ''
     if probability < 33:
-        st.image('Happy Employee 1.jpeg')
+        img = 'Happy Employee 1.jpeg'
+        text = 'Happy Employee'
     elif probability < 66:
-        st.image('Normal Employee.jpeg',width=700)
+        img = 'Normal Employee.jpeg'
+        text = 'Normal Employee'
     else:
-        st.write('Employee likely to leave')
-        st.image('Sad Employee 1.jpeg')
+        text = 'Employee likely to leave'
+        img = 'Sad Employee 1.jpeg'
+    col1, col2 = st.columns(3,[0.4,0.6])
+    with col1:
+        st.write(text)
+    with col2:
+        st.image(img)
     
     
 
