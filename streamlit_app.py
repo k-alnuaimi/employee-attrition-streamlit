@@ -61,7 +61,7 @@ def show_turnover_rate():
     else:
         text = 'Employee likely to leave'
         img = 'Sad Employee 1.jpeg'
-    col1, col2 = st.columns(3,[0.4,0.6])
+    col1, col2 = st.columns([0.4,0.6])
     with col1:
         st.write(text)
     with col2:
