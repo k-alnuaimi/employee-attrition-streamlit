@@ -118,7 +118,7 @@ def show_turnover_rate():
 col1, col2, col3 = st.columns(3)
 #with st.form(key='my_form'):
 with col1:
-    monthlyIncome = st.slider("Monthly Income ($)",0,30000,3000,500)
+    monthlyIncome = st.slider("Monthly Income ($)",0,30000,5000,500)
     maritalStatus = st.selectbox("Marital Status",("Single","Married","Divorced"))
     #totalWorkingYears = st.slider("Total Working Years",0,30,6,1)
 with col2:
@@ -137,24 +137,24 @@ with st.sidebar:
     overTime =st.selectbox("OverTime",("Yes","No"))
     businessTravel = st.selectbox("Business Travel",("No Travel","Travel Frequently","Travel Rarely"))
     #yearsInCurrentRole = st.slider("Years In Current Role",0,60,1,1)
-    yearsInCurrentRole = 0
+    yearsInCurrentRole = 1
     jobInvolvement = st.slider("Job Involvement",1,4,2,1)
     relationShipSatisfaction = st.slider("Relationship Satisfaction",1,4,2,1)
     #department =st.selectbox("Department",("Sales","HR","R&D"))
     department = "HR"
     #jobLevel = st.slider("Job Level",1,5,2,1)
-    jobLevel = 1
+    jobLevel = 2
     trainingTimesLastYear = st.slider("Training Times Last year",1,10,2,1)
     percentSalaryHike = st.slider("Percentage Increase In Salary ",1,30,5,1)
     numCompaniesWorked = st.slider("Number of Compnaies Worked",1,10,2,1)
     #education = st.slider("Education",1,5,3,1)
-    education = 1
+    education = 3
     #yearsSinceLastPromotion = st.slider("Years Since Last Promotion",1,30,2,1)
     yearsSinceLastPromotion = 1
     #jobRole = st.selectbox("Job Role",("HC REP","HR","LAB TECHNICIAN","MANAGER","MANAGING DIRECTOR","REASEARCH DIRECTOR","RESEARCH SCIENTIST","SALES EXECUTIEVE","SALES REPRESENTATIVE"))
     jobRole = "HR"
-    yearsWithCurrentManager = 0
-    yearsAtCompnay = 0
+    yearsWithCurrentManager = 1
+    yearsAtCompnay = 1
     totalWorkingYears  = 2
    # if submit_button:
   #    showrate = True
