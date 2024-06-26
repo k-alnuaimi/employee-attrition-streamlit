@@ -86,7 +86,7 @@ def show_turnover_rate():
             subtext+= '\n-Work Life Balance'
         if performanceRating <5:
             subtext+= '\n-Performance Rating'
-        if monthlyIncome < 25000:
+        if monthlyIncome < 15000:
             subtext+= '\n-Monthly Income'
     else:
         text = 'Likely to leave'
@@ -100,7 +100,7 @@ def show_turnover_rate():
             subtext+= '\n-Work Life Balance'
         if performanceRating <5:
             subtext+= '\n-Performance Rating'
-        if monthlyIncome < 25000:
+        if monthlyIncome < 15000:
             subtext+= '\n-Monthly Income'
         #img = 'Sad Employee 1.jpeg'
         img = load_images()['sad']
@@ -118,7 +118,7 @@ def show_turnover_rate():
 col1, col2, col3 = st.columns(3)
 #with st.form(key='my_form'):
 with col1:
-    monthlyIncome = st.slider("Monthly Income ($)",0,50000,3000,500)
+    monthlyIncome = st.slider("Monthly Income ($)",0,30000,3000,500)
     maritalStatus = st.selectbox("Marital Status",("Single","Married","Divorced"))
     #totalWorkingYears = st.slider("Total Working Years",0,30,6,1)
 with col2:
