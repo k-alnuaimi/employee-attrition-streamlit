@@ -81,7 +81,7 @@ def show_turnover_rate():
                   commitment.
                   Try modifying the following:
                   """
-        if jobSatisfaction <4:
+        if jobSatisfaction !='Very Satisified':
             subtext+= '\n-Job Satisfaction'
         if environmentSatisfaction <4:
             subtext+= '\n-Envivronment Satisfaction'
