@@ -93,12 +93,6 @@ def show_turnover_rate():
         subtext = """
                   Try modifying the following 
                   to retain the employee:
-
-                  - Job Satisfaction
-                  - Environment Satisfaction
-                  - Monthly Income
-                  - Work Life Balance
-                  - Peformance Rating
                   """
         if jobSatisfaction != satisfactionOptions[len(satisfactionOptions)-1]:
             subtext+= '\n-Job Satisfaction'
