@@ -104,7 +104,7 @@ def show_turnover_rate():
             subtext+= '\n-Monthly Income'
         #img = 'Sad Employee 1.jpeg'
         img = load_images()['sad']
-    col1, col2 = st.columns([0.35,0.65])
+    col1, col2 = st.columns([0.4,0.6])
     with col1:
         st.subheader(text,divider='blue')
         st.text(subtext)
