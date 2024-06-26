@@ -124,6 +124,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     monthlyIncome = st.slider("Monthly Income ($)",0,30000,5000,500)
     maritalStatus = st.selectbox("Marital Status",("Single","Married","Divorced"))
+    gender = st.selectbox("Gender",("Male","Female"))
     #totalWorkingYears = st.slider("Total Working Years",0,30,6,1)
 with col2:
     environmentSatisfaction = st.selectbox("Environment Satisfaction",satisfactionOptions,2)
@@ -137,7 +138,6 @@ with col3:
     jobSatisfaction = st.selectbox("Job Satisfaction",satisfactionOptions,1)
     distanceFromeHome = st.slider("Distance From Home (KM)",1,200,4,1)
 with st.sidebar:
-    gender = st.selectbox("Gender",("Male","Female"))
     overTime =st.selectbox("OverTime",("Yes","No"))
     businessTravel = st.selectbox("Business Travel",("No Travel","Travel Frequently","Travel Rarely"))
     #yearsInCurrentRole = st.slider("Years In Current Role",0,60,1,1)
