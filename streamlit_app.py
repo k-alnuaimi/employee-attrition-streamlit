@@ -76,10 +76,7 @@ def show_turnover_rate():
         text = 'Neutral Employee'
        
         subtext = """
-                  Perform his duties adequately
-                  but lacks enthusiasm and 
-                  commitment.Try modifying 
-                  the following:
+                  Perform his duties adequately\nbut lacks enthusiasm and\ncommitment.Try modifying\nthe following:
                   """
         if jobSatisfaction !='Very Satisified':
             subtext+= '\n-Job Satisfaction'
