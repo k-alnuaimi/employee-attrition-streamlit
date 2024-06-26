@@ -90,9 +90,7 @@ def show_turnover_rate():
             subtext+= '\n-Monthly Income'
     else:
         text = 'Likely to leave'
-        subtext = """
-                  Try modifying the following 
-                  to retain the employee:
+        subtext = """Try modifying the following\nto retain the employee:
                   """
         if jobSatisfaction != satisfactionOptions[len(satisfactionOptions)-1]:
             subtext+= '\n-Job Satisfaction'
