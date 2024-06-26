@@ -61,7 +61,7 @@ def show_turnover_rate():
     text = ''
     img = ''
     subtext = ''
-    if probability < 33:
+    if probability < 45:
        # img = 'Happy Employee 1.jpeg'
         img = load_images()['happy']
         text = 'Happy Employee'
