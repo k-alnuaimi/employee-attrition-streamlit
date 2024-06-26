@@ -114,7 +114,7 @@ def show_turnover_rate():
         st.image(img)
 
 st.title('Employee Attrition Prediction')
-st.subheader('testing normal text')
+st.text('testing normal text')
     
 
 col1, col2, col3 = st.columns(3)
