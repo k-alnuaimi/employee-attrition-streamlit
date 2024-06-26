@@ -80,18 +80,17 @@ def show_turnover_rate():
                   but lacks enthusiasm and 
                   commitment.Try modifying 
                   the following:
-
                   """
         if jobSatisfaction !='Very Satisified':
-            subtext+= '-Job Satisfaction\n'
+            subtext+= '\n-Job Satisfaction'
         if environmentSatisfaction != satisfactionOptions[len(satisfactionOptions)-1]:
-            subtext+= '-Envivronment Satisfaction\n'
+            subtext+= '\n-Envivronment Satisfaction'
         if workLifeBalance <4:
-            subtext+= '-Work Life Balance\n'
+            subtext+= '\n-Work Life Balance'
         if performanceRating <5:
-            subtext+= '-Performance Rating\n'
+            subtext+= '\n-Performance Rating'
         if monthlyIncome < 25000:
-            subtext+= '-Monthly Income\n'
+            subtext+= '\n-Monthly Income'
     else:
         text = 'Likely to leave'
         subtext = """
