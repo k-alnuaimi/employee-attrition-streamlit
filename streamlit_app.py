@@ -108,7 +108,7 @@ def show_turnover_rate():
     with col1:
         st.subheader(text,divider='blue')
         st.text(subtext)
-        st.text(probability)
+        #st.text(probability)
         st.write()
     with col2:
         st.image(img)
