@@ -1,10 +1,18 @@
 import pandas as pd
 import streamlit as st
+from PIL import Image
 
 st.set_page_config(initial_sidebar_state='collapsed')
 @st.cache_resource
 def init_model():
     return pd.read_pickle("random-forest-attrition.pkl")
+@st.cache
+def load_images():
+    data = dict()
+    data['happy'] = Image.open('Happy Employee 1.jpeg')
+    data['sad'] = Image.open('Sad Employee 1.jpeg')
+    data['neutral'] = Image.open('Normal Employee.jpeg')
+    return data
 model_rf = init_model()
 
 satisfactionOptions = ["Very Disatisfied","Disatisfied","Satisfied","Very Satisfied"]
@@ -54,7 +62,8 @@ def show_turnover_rate():
     img = ''
     subtext = ''
     if probability < 33:
-        img = 'Happy Employee 1.jpeg'
+       # img = 'Happy Employee 1.jpeg'
+        img = load_images()['happy']
         text = 'Happy Employee'
         subtext = """
                   The employee is happy in
@@ -62,7 +71,8 @@ def show_turnover_rate():
                   likely to stay.
                   """
     elif probability < 66:
-        img = 'Normal Employee.jpeg'
+        #img = 'Normal Employee.jpeg'
+        img = load_images()['neutral']
         text = 'Neutral Employee'
         subtext = """
                   Perform their duties adequately
@@ -87,7 +97,8 @@ def show_turnover_rate():
                   - Work Life Balance
                   - Peformance Rating
                   """
-        img = 'Sad Employee 1.jpeg'
+        #img = 'Sad Employee 1.jpeg'
+        img = load_images()['sad']
     col1, col2 = st.columns([0.35,0.65])
     with col1:
         st.subheader(text,divider='blue')
@@ -118,11 +129,8 @@ with st.sidebar:
     gender = st.selectbox("Gender",("Male","Female"))
     overTime =st.selectbox("OverTime",("Yes","No"))
     businessTravel = st.selectbox("Business Travel",("No Travel","Travel Frequently","Travel Rarely"))
-    
     #yearsInCurrentRole = st.slider("Years In Current Role",0,60,1,1)
     yearsInCurrentRole = 0
-    
-    
     jobInvolvement = st.slider("Job Involvement",1,4,2,1)
     relationShipSatisfaction = st.slider("Relationship Satisfaction",1,4,2,1)
     #department =st.selectbox("Department",("Sales","HR","R&D"))
