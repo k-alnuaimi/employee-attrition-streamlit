@@ -114,7 +114,7 @@ def show_turnover_rate():
         st.image(img)
 
 st.title('Employee Attrition Prediction')
-st.text('testing normal text')
+st.text('Employees attrition costs are a significate concern for businesses worldwide. The average annual attrition rate in the U.S is 47% and replacing an employee costs up to 2 times of their annual salary. There are many factors that could lead to attrition like low pay or toxic work environment.However, 56% of job seekers value company culture over salary (https://builtin.com/recruiting/employee-turnover-statistics)')
     
 
 col1, col2, col3 = st.columns(3)
