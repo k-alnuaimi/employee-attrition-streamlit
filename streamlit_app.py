@@ -90,7 +90,7 @@ def show_turnover_rate():
             subtext+= '\n-Monthly Income'
     else:
         text = 'Likely to leave'
-        subtext = """Feels undervalued, overworked,\nand unmotivated, leading to dissatisfaction\nand low morale.Try modifying the following\nto retain the employee:
+        subtext = """Feels undervalued, overworked,\nand unmotivated, leading \nto dissatisfaction nd low morale.\nTry modifying the following\nto retain the employee:
                   """
         if jobSatisfaction != satisfactionOptions[len(satisfactionOptions)-1]:
             subtext+= '\n-Job Satisfaction'
