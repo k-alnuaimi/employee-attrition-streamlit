@@ -78,7 +78,7 @@ def show_turnover_rate():
         subtext = """
                   Perform his duties adequately\nbut lacks enthusiasm and\ncommitment.Try modifying\nthe following:
                   """
-        if jobSatisfaction !='Very Satisified':
+        if jobSatisfaction != satisfactionOptions[len(satisfactionOptions)-1]:
             subtext+= '\n-Job Satisfaction'
         if environmentSatisfaction != satisfactionOptions[len(satisfactionOptions)-1]:
             subtext+= '\n-Envivronment Satisfaction'
@@ -100,9 +100,9 @@ def show_turnover_rate():
                   - Work Life Balance
                   - Peformance Rating
                   """
-        if jobSatisfaction <4:
+        if jobSatisfaction != satisfactionOptions[len(satisfactionOptions)-1]:
             subtext+= '\n-Job Satisfaction'
-        if environmentSatisfaction <4:
+        if environmentSatisfaction != satisfactionOptions[len(satisfactionOptions)-1]:
             subtext+= '\n-Envivronment Satisfaction'
         if workLifeBalance <4:
             subtext+= '\n-Work Life Balance'
@@ -117,6 +117,7 @@ def show_turnover_rate():
         st.subheader(text,divider='blue')
         st.text(subtext)
         st.text(probability)
+        st.write()
     with col2:
         st.image(img)
     
