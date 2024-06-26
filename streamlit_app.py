@@ -6,7 +6,7 @@ st.set_page_config(initial_sidebar_state='collapsed')
 @st.cache_resource
 def init_model():
     return pd.read_pickle("random-forest-attrition.pkl")
-@st.cache
+@st.cache(allow_output_mutation=True)
 def load_images():
     data = dict()
     data['happy'] = Image.open('Happy Employee 1.jpeg')
@@ -74,17 +74,23 @@ def show_turnover_rate():
         #img = 'Normal Employee.jpeg'
         img = load_images()['neutral']
         text = 'Neutral Employee'
+       
         subtext = """
-                  Perform their duties adequately
-                    but 
-                  lack enthusiasm and commitment :
-
-                  - Job Satisfaction
-                  - Environment Satisfaction
-                  - Monthly Income
-                  - Work Life Balance
-                  - Peformance Rating
+                  Perform his duties adequately
+                  but lacks enthusiasm and 
+                  commitment.
+                  Try modifying the following:
                   """
+        if jobSatisfaction <4:
+            subtext+= '\n-Job Satisfaction'
+        if environmentSatisfaction <4:
+            subtext+= '\n-Envivronment Satisfaction'
+        if workLifeBalance <4:
+            subtext+= '\n-Work Life Balance'
+        if performanceRating <5:
+            subtext+= '\n-Performance Rating'
+        if monthlyIncome < 25000:
+            subtext+= '\n-Monthly Income'
     else:
         text = 'Likely to leave'
         subtext = """
@@ -97,6 +103,16 @@ def show_turnover_rate():
                   - Work Life Balance
                   - Peformance Rating
                   """
+        if jobSatisfaction <4:
+            subtext+= '\n-Job Satisfaction'
+        if environmentSatisfaction <4:
+            subtext+= '\n-Envivronment Satisfaction'
+        if workLifeBalance <4:
+            subtext+= '\n-Work Life Balance'
+        if performanceRating <5:
+            subtext+= '\n-Performance Rating'
+        if monthlyIncome < 25000:
+            subtext+= '\n-Monthly Income'
         #img = 'Sad Employee 1.jpeg'
         img = load_images()['sad']
     col1, col2 = st.columns([0.35,0.65])
