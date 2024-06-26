@@ -114,9 +114,8 @@ def show_turnover_rate():
         st.image(img)
 
 st.title('Employee Attrition Prediction')
-st.text("""Modify the featurers below and click submit to 
-predict whether the employee will be leaving or not.
-You can alos open the sidebar on the left for additional options""")
+st.text("""Modify the featurers below and click submit to predict whether the employee 
+will be leaving or not.You can alos open the sidebar on the left for additional options""")
     
 
 col1, col2, col3 = st.columns(3)
