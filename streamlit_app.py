@@ -83,7 +83,7 @@ def show_turnover_rate():
                   """
         if jobSatisfaction !='Very Satisified':
             subtext+= '\n-Job Satisfaction'
-        if environmentSatisfaction !='Very Satisified':
+        if environmentSatisfaction != satisfactionOptions[len(satisfactionOptions)-1]:
             subtext+= '\n-Envivronment Satisfaction'
         if workLifeBalance <4:
             subtext+= '\n-Work Life Balance'
