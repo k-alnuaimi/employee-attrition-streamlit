@@ -14,7 +14,7 @@ def load_images():
     data['neutral'] = Image.open('Normal Employee.jpeg')
     return data
 model_rf = init_model()
-
+load_images()
 satisfactionOptions = ["Very Disatisfied","Disatisfied","Satisfied","Very Satisfied"]
 
 
